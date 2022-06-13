@@ -1,0 +1,42 @@
+
+  <div class="spacer"></div>
+    <a routerLink="employee/getAllEmployee" routerLinkActive="active" class="card"  rel="noopener" >  
+      <span>Employee List</span>
+    </a>
+    <a routerLink="employee/addemployee" routerLinkActive="active" class="card"  rel="noopener" >  
+      <span>Create Employee</span>
+    </a>
+    <br>
+    
+    <h2>Employee-list</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>userId</th>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>email</th>
+                <th>dob</th>
+                <!-- <th>username</th>
+                <th>password</th> -->
+                 <th>Actions</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employe of employee">
+                <td>{{employe.userId}}</td>
+                <td>{{employe.firstname}}</td>
+                <td>{{employe.lastname}}</td>
+                <td>{{employe.email}}</td>
+                <td>{{employe.dob}}</td>
+                <td>{{employe.username}}</td>
+                <td>{{employe.password}}</td>
+                <br>
+                  <td>
+                    <button (click)="deleteEmployee(employe.userId)" class="btn btn-danger" sytle="margin-left:40px">delete</button>
+                    
+                </td> 
+            </tr>
+        </tbody>
+    </table>
+  

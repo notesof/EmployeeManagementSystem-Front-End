@@ -1,0 +1,39 @@
+<div class="col-md-6 offset-md-3">
+    <h3 style="text-align: center;">Create Project</h3>
+    <form (ngSubmit)="onSubmit()"  #userForm="ngForm">
+        {{userForm.form.valid}}
+    
+        <div class="container">
+            <div class="form-group">
+                <label for="">projId</label>
+                <input type="number" class="form-control" id="projId"
+                 [(ngModel)]="project.projId" name="projId" 
+                 placeholder="project Id" required #projId="ngModel" [class.is-invalid]="projId.invalid && projId.touched">
+                 <small class="text-danger" [class.d-none]="projId.valid||projId.untouched">projId is required</small>
+            </div>
+            
+            <br>
+
+            <div class="form-group">
+                <label for="">projName</label>
+                <input type="text" class="form-control" id="projName"
+                 [(ngModel)]="project.projName" name="projName" placeholder="Project Name" required #projName="ngModel" [class.is-invalid]="projName.invalid && projName.touched">
+                 <small class="text-danger" [class.d-none]="projName.valid||projName.untouched">Project Name is required</small>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="">projStatus</label>
+                <input type="text" class="form-control" id="projStatus"
+                 [(ngModel)]="project.projStatus" name="projStatus" placeholder="Project status" required #projStatus="ngModel" [class.is-invalid]="projStatus.invalid && projStatus.touched">
+                 <small class="text-danger" [class.d-none]="projStatus.valid||projStatus.untouched">Project Status is required</small>
+            </div>
+
+            <br>
+            <br>
+    
+        <button [disabled]="userForm.form.invalid" class="btn btn-success" type="submit" style="margin-bottom: 30px;margin-left: 47%;">submit</button>
+        </div>
+    </form>
+</div>

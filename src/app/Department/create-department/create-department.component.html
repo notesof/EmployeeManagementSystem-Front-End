@@ -1,0 +1,27 @@
+<div class="col-md-6 offset-md-3">
+  <h2>Create Department</h2>
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    {{userForm.form.valid}}
+  <div class="form-group">
+      <label>Department Name</label>
+      <input type="text" required #departName="ngModel" [class.is-invalid]="departName.invalid && departName.touched"
+       class="form-control" id="departName" [(ngModel)] = "department.departName" name="departName">
+       <small class="text-danger" [class.d-none]="departName.valid||departName.untouched">Name is required</small>
+    </div >
+      <div class="form-group">
+      <label>Department Head</label>
+      <input type="text" required #departHead="ngModel" [class.is-invalid]="departHead.invalid && departHead.touched"
+      class="form-control" id="departHead" [(ngModel)] = "department.departHead" name="deparHead">
+      <small class="text-danger" [class.d-none]="departHead.valid||departHead.untouched">Name is required</small>
+    </div>
+      <div class="form-group">
+      <label>Email</label>
+      <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
+      class="form-control" id="email" [(ngModel)] = "department.email" name="email">
+      <small class="text-danger" [class.d-none]="email.valid||email.untouched">Enter valid Email</small>
+  </div>
+  <br>
+    <button [disabled]="userForm.form.invalid" class="btn btn-success" type="submit">Submit</button>
+  
+  </form>
+  </div>

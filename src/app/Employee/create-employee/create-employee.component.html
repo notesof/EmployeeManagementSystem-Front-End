@@ -1,0 +1,34 @@
+<h3>create-employee</h3>
+<form (ngSubmit) = "register()" #employeeform="ngForm">
+    <div class="form-group">
+        <label>First Name</label>
+        <input  #firstname="ngModel" type="text" class="form-control" id="firstname"
+           [(ngModel)] = "employee.firstname" name="firstname">
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input #lastname type="text" class="form-control" id="lastname"
+           [(ngModel)] = "employee.lastname" name="lastname">
+    </div>
+    <div class="form-group">
+        <label>emailid</label>
+        <input type="text" class="form-control" id="emailid"
+           [(ngModel)] = "employee.email" name="emailid">
+    </div>
+    <div class="form-group">
+        <label>dob</label>
+        <input type="date" class="form-control" id="dob"
+           [(ngModel)] = "employee.dob" name="dob">
+    </div>
+    <div class="form-group">
+        <label>userName</label>
+        <input type="text" class="form-control" id="username"
+           [(ngModel)] = "employee.username" name="username">
+    </div>
+    <div class="form-group">
+        <label>password</label>
+        <input type="text" class="form-control" id="password"
+           [(ngModel)] = "employee.password" name="password">
+    </div>
+    <button class ="btn btn-success" type ="submit" class="btn btn-primary mb-2">Add</button>
+</form>

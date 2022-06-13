@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CreateComplianceComponent } from './Compliance/create-compliance/create-compliance.component';
 
 @Component({
   selector: 'app-root',

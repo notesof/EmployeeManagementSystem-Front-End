@@ -1,0 +1,52 @@
+<!-- <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+     <a routerLink="project/getAll" routerLinkActive="active" class="nav-link"> Project List</a>
+  
+      </li>
+      <li class="nav-item">
+        <a routerLink="project/addProject" routerLinkActive="active" class="nav-link">Add Project</a>
+        
+         </li>
+    </ul>
+  
+  </nav> -->
+
+  <div class="spacer"></div>
+<a routerLink="project/getAll" routerLinkActive="active" class="card"  rel="noopener" >  
+  <span>Project List</span>
+</a>
+<a routerLink="project/addProject" routerLinkActive="active" class="card"  rel="noopener" >  
+  <span>Create Project</span>
+</a>
+<br>
+
+<h2 class="text-center">Project Details</h2> <br> <br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>project Id</th>
+            <th>project Name</th>
+            <th>project Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let project of projects">
+           <td> {{project.projId}} </td>
+           <td> {{project.projName}} </td>
+           <td> {{project.projStatus}} </td>
+           <!-- <td>
+            <button (click) = "deleteProject(project.projId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            <button (click) = "projectDetails(project.projId)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+           </td> -->
+        </tr>
+    </tbody>
+</table>
+
+<!-- <footer class="footer">
+    <div class = "container">
+       <span>All Rights Reserved 2022</span>
+    </div>
+  
+  </footer> -->
+

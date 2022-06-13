@@ -1,0 +1,59 @@
+<div id="viewport" >
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <header>
+        <a  href="#">Home</a>
+      </header>
+      <ul class="nav">
+        <div class="spacer">
+
+          <a routerLink="/employee" routerLinkActive="active" class="card"  rel="noopener" >  
+            <span>Employee</span>
+          </a>
+
+    
+            <a routerLink="/compliance" routerLinkActive="active" class="card"  rel="noopener" >  
+              <span>Compliance</span>
+            </a>             
+           
+          <a routerLink="/project" routerLinkActive="active" class="card"  rel="noopener" >  
+            <span>Project</span>
+          </a>
+            
+          <a routerLink="/department" routerLinkActive="active" class="card"  rel="noopener" >  
+            <span>Department</span>
+          </a>
+            
+          <a routerLink="/statusreport" routerLinkActive="active" class="card"  rel="noopener" >  
+            <span>StatusReport</span>
+          </a>
+
+          <a routerLink="/AdminLogin" routerLinkActive="active" class="card"  rel="noopener" >  
+            <span>Logout</span>
+          </a>
+
+          
+        </div>    
+      </ul>
+    </div>
+    <!-- Content -->
+    <div id="content">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          
+        </div>
+      </nav>
+  <br>
+  <div class="container">
+  <router-outlet></router-outlet>
+  <!-- </div>
+  <br>
+  <br>
+  <br>
+  <div>
+  <footer class="footer">
+  <p>All Rights Reserved 2022</p>
+  </footer> -->
+</div>
+    </div>
+</div>

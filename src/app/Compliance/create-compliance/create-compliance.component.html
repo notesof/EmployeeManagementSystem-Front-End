@@ -1,0 +1,74 @@
+<div class="col-md-6 offset-md-3">
+    <h3 style="text-align: center;">Create Compliance</h3>
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        {{userForm.form.valid}}
+    
+        <div class="container">
+            <div class="form-group">
+                <!-- <label for="">complianceId</label>
+                <input type="number" class="form-control" id="complianceid"
+                 [(ngModel)]="compliance.complianceId" name="complianceId" 
+                 placeholder="id"> -->
+            </div>
+            
+            <br>
+
+            <div class="form-group">
+                <label for="">rlType</label>
+                <input type="text" class="form-control" id="rlType"
+                 [(ngModel)]="compliance.rlType" name="rlType" placeholder="regulation type" required #rlType="ngModel" [class.is-invalid]="rlType.invalid && rlType.touched">
+                 <small class="text-danger" [class.d-none]="rlType.valid||rlType.untouched">rlType is required</small>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="">details</label>
+                <textarea class="form-control" id="details"
+                [(ngModel)]="compliance.details" name="details" cols="30" rows="3" placeholder="details" required #details="ngModel" [class.is-invalid]="details.invalid && details.touched"></textarea>
+                <small class="text-danger" [class.d-none]="details.valid||details.untouched">details required</small>
+                <!-- <input type="text-area" class="form-control" id="details"
+                 [(ngModel)]="compliance.details" name="details"> -->
+            </div>
+
+            <br>
+
+            <!-- <div class="form-group">
+                <label for="">createDate</label>
+                <input type="text" class="form-control" id="createDate"
+                 [(ngModel)]="compliance.createDate" name="createDate">
+            </div> -->
+
+            <br>
+
+            <div class="form-group">
+                <label for="">empCount</label>
+                <input type="number" class="form-control" id="empCount"
+                 [(ngModel)]="compliance.empCount" name="empCount" placeholder="emp count" 
+                 required #empCount="ngModel" [class.is-invalid]="empCount.invalid && empCount.touched">
+                 <small class="text-danger" [class.d-none]="empCount.valid||empCount.untouched">empCount is required</small>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="">stscCount</label>
+                <input type="number" class="form-control" id="stscCount"
+                 [(ngModel)]="compliance.stscCount" name="stscCount" placeholder="status count" required #stscCount="ngModel" [class.is-invalid]="stscCount.invalid && stscCount.touched">
+                 <small class="text-danger" [class.d-none]="stscCount.valid||stscCount.untouched">stsCount is required</small>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="">status</label>
+                <input type="text" class="form-control" id="status"
+                 [(ngModel)]="compliance.status" name="status" placeholder="status" required #status="ngModel" [class.is-invalid]="status.invalid && status.touched">
+                 <small class="text-danger" [class.d-none]="status.valid||status.untouched">status is required</small>
+            </div>
+        </div>
+        <br>
+    
+        <button [disabled]="userForm.form.invalid" class="btn btn-success" type="submit" style="margin-bottom: 30px;margin-left: 47%;">submit</button>
+    </form>
+</div>    

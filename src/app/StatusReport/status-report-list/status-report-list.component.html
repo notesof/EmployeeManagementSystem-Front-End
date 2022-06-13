@@ -1,0 +1,36 @@
+<div class="spacer"></div>
+<a routerLink="statusreport/getAll" routerLinkActive="active" class="card"  rel="noopener" >  
+  <span>StatusReport List</span>
+</a>
+<a routerLink="statusreport/create" routerLinkActive="active" class="card"  rel="noopener" >  
+  <span>Create StatusReport</span>
+</a>
+<br>
+
+<h2 class="text-center">StatusReport Details</h2> <br> <br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>statusId</th>
+            <th>comments</th>
+            <th>details</th>
+            <th>createDate</th>
+            <th>userId</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let statusReport of statusReports">
+           <td> {{statusReport.statusId}} </td>
+           <td> {{statusReport.comments}} </td>
+           <td> {{statusReport.details}} </td>
+           <td> {{statusReport.createDate}} </td>
+           <td> {{statusReport.userId}} </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+

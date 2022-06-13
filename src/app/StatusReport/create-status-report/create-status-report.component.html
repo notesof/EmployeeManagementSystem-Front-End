@@ -1,0 +1,47 @@
+<div class="col-md-6 offset-md-3">
+    <h3 style="text-align: center;">Create StatusReport</h3>
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        {{userForm.form.valid}}
+    
+        <div class="container">
+           
+            <br>
+
+            <div class="form-group">
+                <label for="">comments</label>
+                <input type="text" class="form-control" id="comments"
+                 [(ngModel)]="statusReport.comments" name="comments" #comments="ngModel" required [class.is-invalid]="comments.invalid && comments.touched">
+                 <small class="text-danger" [class.d-none]="comments.valid||comments.untouched">comments are required</small>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="">details</label>
+                <input type="text" class="form-control" id="details"
+                 [(ngModel)]="statusReport.details" name="details" #details="ngModel" required [class.is-invalid]="details.invalid && details.touched">
+                 <small class="text-danger" [class.d-none]="details.valid||details.untouched">Details are required</small>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="">createDate</label>
+                <input type="text" class="form-control" id="createDate"
+                 [(ngModel)]="statusReport.createDate" name="createDate" #createDate="ngModel" required [class.is-invalid]="createDate.invalid && createDate.touched">
+                 <small class="text-danger" [class.d-none]="createDate.valid||createDate.untouched">Date is required</small>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="">userId</label>
+                <input type="number" class="form-control" id="userId"
+                 [(ngModel)]="statusReport.userId" name="userId" #userId="ngModel" required [class.is-invalid]="userId.invalid && userId.touched">
+                 <small class="text-danger" [class.d-none]="userId.valid||userId.untouched">userId is required</small>
+            </div>
+            <br>
+          <button [disabled]="userForm.form.invalid" class="btn btn-success" type="submit">submit</button>
+        </div>
+    </form>
+</div>

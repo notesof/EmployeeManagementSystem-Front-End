@@ -1,0 +1,27 @@
+
+<div class="spacer"></div>
+<a routerLink="department/getAllDepartments" routerLinkActive="active" class="card">  
+  <span>Department List</span>
+</a>
+<a routerLink="department/adddepartment" routerLinkActive="active" class="card">  
+  <span>Create Department</span>
+</a>
+<h2>Department List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Department Id</th>
+            <th>Department Name</th>
+            <th>Department Head</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let depart of department">
+            <td>{{depart.departId}}</td>
+            <td>{{depart.departName}}</td>
+            <td>{{depart.departHead}}</td>
+            <td>{{depart.email}}</td>
+        </tr>
+    </tbody>
+</table>

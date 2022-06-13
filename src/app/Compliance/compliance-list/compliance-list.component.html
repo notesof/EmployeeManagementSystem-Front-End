@@ -1,0 +1,56 @@
+<!-- <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+   <a routerLink="compliance/getall" routerLinkActive="active" class="nav-link"> Compliance List</a>
+
+    </li>
+    <li class="nav-item">
+      <a routerLink="compliance/create" routerLinkActive="active" class="nav-link">Add Compliance</a>
+      
+       </li>
+  </ul>
+
+</nav> -->
+
+<div class="spacer"></div>
+<a routerLink="compliance/getall" routerLinkActive="active" class="card"  rel="noopener" >  
+  <span>Compliance List</span>
+</a>
+<a routerLink="compliance/create" routerLinkActive="active" class="card"  rel="noopener" >  
+  <span>Create Compliance</span>
+</a>
+<br>
+
+<h2 class="text-center">Compliance Details</h2> <br> <br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ComplianceId</th>
+            <th>R L Type</th>
+            <th>Details</th>
+            <th>CreateDate</th>
+            <th>EmpCount</th>
+            <th>StscCount</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let compliance of compliances">
+           <td> {{compliance.complianceId}} </td>
+           <td> {{compliance.rlType}} </td>
+           <td> {{compliance.details}} </td>
+           <td> {{compliance.createDate}} </td>
+           <td> {{compliance.empCount}} </td>
+           <td> {{compliance.stscCount}} </td>
+           <td> {{compliance.status}} </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <footer class="footer">
+    <div class = "container">
+       <span>All Rights Reserved 2022</span>
+    </div>
+  
+  </footer> -->
+

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Admin Login</h1>
+                     <h6>Please enter username & password</h6>
+                </div>
+            
+                <form class="loginForm" (ngSubmit)="doLogin()" #loginForm="ngForm" >
+                    <div class="mb-3 ms-5">
+                        <label for="adminUsername" class="form-label" style="padding-right: 15px;">Username</label>
+                        <input required type="text" #adminUsername="ngModel" [(ngModel)]="loginModel.adminUsername" id="adminUsername" name="adminUsername" autocomplete="off" /> 
+                        <div *ngIf="adminUsername.untouched == false && adminUsername.touched == true && adminUsername.invalid == true">
+                            <p class="errorMsg"> username cannot be left blank </p>
+                        </div> 
+                      
+                    </div>
+                    <div class="mb-3 ms-5">
+                      <label for="adminpassword" class="form-label" style="padding-right: 18px;">Password</label>
+                      <input required type="password" #adminpassword="ngModel" [(ngModel)]="loginModel.adminpassword" id="adminpassword" name="adminpassword" autocomplete="off" />
+                      <div *ngIf="adminpassword.untouched == false && adminpassword.touched == true && adminpassword.invalid == true">
+                        <p class="errorMsg"> Password cannot be left blank </p>
+                    </div>    
+                    </div>
+                   <div style="text-align: center;margin-bottom:8px">
+                    <button [disabled]="loginForm.form.invalid" type="submit" class="btn btn-info">Login</button></div>
+                 </form>
+                 <a routerLink="/AdminSignup"><i>New User? Click to signup!!</i></a>
+                 <!-- <router-outlet></router-outlet> -->
+                 <!-- <a routerLink="/adminReset">Forgot Password</a> -->
+            
+             </div>
+        </div>
+    </div>
+</div>
